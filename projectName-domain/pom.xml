@@ -7,7 +7,7 @@
     <parent>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <artifactId>projectName</artifactId>
-        <version>1.4.0.RELEASE</version>
+        <version>1.5.0.RELEASE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -37,11 +37,13 @@
             <artifactId>terasoluna-gfw-security-core-dependencies</artifactId>
             <type>pom</type>
         </dependency>
+        <!--  REMOVE THIS LINE IF YOU USE MyBatis3
         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
             <artifactId>terasoluna-gfw-mybatis3-dependencies</artifactId>
             <type>pom</type>
         </dependency>
+              REMOVE THIS LINE IF YOU USE MyBatis3  -->
         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
             <artifactId>terasoluna-gfw-recommended-dependencies</artifactId>
@@ -56,7 +58,7 @@
 <!--             <scope>test</scope> -->
 <!--         </dependency> -->
 <!--         <dependency> -->
-<!--             <groupId>com.oracle</groupId> -->
+<!--             <groupId>com.oracle.jdbc</groupId> -->
 <!--             <artifactId>ojdbc7</artifactId> -->
 <!--             <scope>test</scope> -->
 <!--         </dependency> -->
@@ -66,6 +68,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -83,6 +90,18 @@
             <artifactId>tomcat-embed-el</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--  REMOVE THIS LINE IF YOU USE Spring Test DBUnit
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.springtestdbunit</groupId>
+            <artifactId>spring-test-dbunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        -->
         <!-- == End Unit Test == -->
 
         <!-- == Begin Coding Support == -->
