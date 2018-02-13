@@ -1,4 +1,4 @@
-## Blank multi project for web application using Macchinetta Server Framework (1.x) 
+## Blank multi project for web application using Macchinetta Server Framework (1.x)
 
 ### multi blank project
 
@@ -10,7 +10,7 @@ To create multi blank project
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-multi-web-blank-archetype^
- -DarchetypeVersion=1.4.0.RELEASE
+ -DarchetypeVersion=1.5.0.RELEASE
 ```
 
 #### for Bash
@@ -19,6 +19,6 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-multi-web-blank-archetype\
- -DarchetypeVersion=1.4.0.RELEASE
+ -DarchetypeVersion=1.5.0.RELEASE
 ```
 

@@ -30,8 +30,8 @@ Create a new issue from [here](https://github.com/Macchinetta/macchinetta-web-mu
  Modify to `"<artifactId>projectName</artifactId>"`
 
  ## Affects Version/s
- * 1.1.0.RELEASE
- * 1.0.1.RELEASE
+ * 1.5.0.RELEASE
+ * 1.4.2.RELEASE
 
  ## Fix Version/s
  (To be written later by project member)
