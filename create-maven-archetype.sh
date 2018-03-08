@@ -3,7 +3,7 @@
 rm -rf ./target
 rm -rf ./tmp
 mkdir tmp
-cp -r  pom.xml projectName* tmp
+cp -r  pom.xml infra projectName* tmp
 pushd tmp
 
 # rename "projectName" in filename to replace by ${artifactId}
@@ -20,28 +20,28 @@ if [ -d projectName-domain/src/main/resources/xxxxxx ];then
   rm -rf projectName-domain/src/main/resources/xxxxxx
 fi
 
+rm -rf infra
 rm -rf `/usr/bin/find . -name '.svn' -type d`
 
-if [ "$1" = "central" ]; then
+if [ "$2" = "central" ]; then
   PROFILE="-P central"
 fi
-
 mvn archetype:create-from-project ${PROFILE}
 
 pushd target/generated-sources/archetype
 sed -i -e "s/xxxxxx\.yyyyyy\.zzzzzz/com.github.macchinetta.blank/g" pom.xml
-sed -i -e "s/projectName/macchinetta-multi-web-blank/g" pom.xml
+sed -i -e "s/projectName/macchinetta-multi-web-blank-noorm/g" pom.xml
 
-# add plugins to deploy to Maven Central Repository
-if [ "$1" = "central" ]; then
+if [ "$2" = "central" ]; then
+  # add plugins to deploy to Maven Central Repository
   LF=$(printf '\\\012_')
   LF=${LF%_}
-
+  
   REPLACEMENT_TAG="    <plugins>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}      <plugin>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}        <groupId>org.sonatype.plugins<\/groupId>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}        <artifactId>nexus-staging-maven-plugin<\/artifactId>${LF}"
-  REPLACEMENT_TAG="${REPLACEMENT_TAG}        <version>1.6.8<\/version>${LF}"
+  REPLACEMENT_TAG="${REPLACEMENT_TAG}        <version>1.6.7<\/version>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}        <extensions>true<\/extensions>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}        <configuration>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}          <serverId>ossrh<\/serverId>${LF}"
@@ -65,11 +65,11 @@ if [ "$1" = "central" ]; then
   REPLACEMENT_TAG="${REPLACEMENT_TAG}      <\/plugin>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}    <\/plugins>${LF}"
   REPLACEMENT_TAG="${REPLACEMENT_TAG}  <\/build>"
-
+  
   sed -i -e "s/  <\/build>/${REPLACEMENT_TAG}/" pom.xml
 fi
 
-if [ "$1" = "central" ]; then
+if [ "$1" = "deploy" ]; then
   mvn deploy
 else
   mvn install
