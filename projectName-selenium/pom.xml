@@ -5,7 +5,7 @@
     <artifactId>projectName-selenium</artifactId>
     <packaging>jar</packaging>
     <parent>
-        <version>1.5.1.RELEASE</version>
+        <version>1.6.0.RELEASE</version>
         <artifactId>projectName</artifactId>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <relativePath>../pom.xml</relativePath>
@@ -61,7 +61,6 @@
 <!--             <scope>test</scope> -->
 <!--         </dependency> -->
 
-        <!-- Please set the appropriate version according to the web browser. -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>

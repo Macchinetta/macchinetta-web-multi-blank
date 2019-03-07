@@ -7,7 +7,7 @@
     <parent>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <artifactId>projectName</artifactId>
-        <version>1.5.1.RELEASE</version>
+        <version>1.6.0.RELEASE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -50,6 +50,16 @@
             <type>pom</type>
         </dependency>
         <!-- == End TERASOLUNA == -->
+
+        <!-- == Begin Security == -->
+        <!-- Please remove comment out when using SCryptPasswordEncoder. -->
+        <!--
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+        </dependency>
+        -->
+        <!-- == End Security == -->
 
         <!-- == Begin Database == -->
 <!--         <dependency> -->
