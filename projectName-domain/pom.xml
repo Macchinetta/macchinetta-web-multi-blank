@@ -7,7 +7,7 @@
     <parent>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <artifactId>projectName</artifactId>
-        <version>1.6.0.RELEASE</version>
+        <version>1.6.1.RELEASE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -51,16 +51,6 @@
         </dependency>
         <!-- == End TERASOLUNA == -->
 
-        <!-- == Begin Security == -->
-        <!-- Please remove comment out when using SCryptPasswordEncoder. -->
-        <!--
-        <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-        </dependency>
-        -->
-        <!-- == End Security == -->
-
         <!-- == Begin Database == -->
 <!--         <dependency> -->
 <!--             <groupId>org.postgresql</groupId> -->
@@ -69,7 +59,7 @@
 <!--         </dependency> -->
 <!--         <dependency> -->
 <!--             <groupId>com.oracle.jdbc</groupId> -->
-<!--             <artifactId>ojdbc7</artifactId> -->
+<!--             <artifactId>ojdbc8</artifactId> -->
 <!--             <scope>test</scope> -->
 <!--         </dependency> -->
         <!-- == End Database == -->
