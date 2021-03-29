@@ -10,3 +10,6 @@ target
 tmp
 *.iml
 
+*.doc*
+*.ppt*
+*.xls*
