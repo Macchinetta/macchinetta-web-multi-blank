@@ -10,7 +10,7 @@ To create multi blank project
 mvn archetype:generate^
  -DarchetypeGroupId=com.github.macchinetta.blank^
  -DarchetypeArtifactId=macchinetta-multi-web-blank-archetype^
- -DarchetypeVersion=1.8.1.SP1.RELEASE
+ -DarchetypeVersion=1.8.2.RELEASE
 ```
 
 #### for Bash
@@ -19,6 +19,6 @@ mvn archetype:generate^
 mvn archetype:generate\
  -DarchetypeGroupId=com.github.macchinetta.blank\
  -DarchetypeArtifactId=macchinetta-multi-web-blank-archetype\
- -DarchetypeVersion=1.8.1.SP1.RELEASE
+ -DarchetypeVersion=1.8.2.RELEASE
 ```
 
