@@ -1,26 +1,25 @@
 #!/bin/sh
+set -e
+
 CONFIG=$1
 VIEW=$2
 ORM=$3
 DEPRLOY=$4
 REPOSITORY=$5
 
-if [ $VIEW == "JSP" ]; then
-  ARTIFACT_ID_VIEW=""
-else
-  ARTIFACT_ID_VIEW=-${VIEW,,}
-fi
 if [ $ORM != "NoORM" ]; then
-  ARTIFACT_ID_ORM=""
+  if [ "$CONFIG" = "JavaConfig" ]; then
+    ARTIFACT_ID=macchinetta-multi-web-blank-${VIEW,,}-${ORM,,}
+  else
+    ARTIFACT_ID=macchinetta-multi-web-blank-${CONFIG,,}-${VIEW,,}-${ORM,,}
+  fi
 else
-  ARTIFACT_ID_ORM=-${ORM,,}
+  if [ "$CONFIG" = "JavaConfig" ]; then
+    ARTIFACT_ID=macchinetta-multi-web-blank-${VIEW,,}
+  else
+    ARTIFACT_ID=macchinetta-multi-web-blank-${CONFIG,,}-${VIEW,,}
+  fi
 fi
-if [ $CONFIG == "XMLConfig" ]; then
-  ARTIFACT_ID_CONFIG=""
-else
-  ARTIFACT_ID_CONFIG=-${CONFIG,,}
-fi
-ARTIFACT_ID=macchinetta-multi-web-blank${ARTIFACT_ID_CONFIG}${ARTIFACT_ID_ORM}${ARTIFACT_ID_VIEW}
 echo create $ARTIFACT_ID
 
 # start create tmp directory ###################
@@ -72,8 +71,10 @@ if [ -d projectName-domain/src/main/resources/xxxxxx ];then
   rm -rf projectName-domain/src/main/resources/xxxxxx
 fi
 
-sed -i -e "/REMOVE THIS LINE IF YOU USE $ORM/d" `grep -rIl $ORM projectName-* | grep -v '.svn'`
-sed -i -e "s/REMOVE THIS COMMENT IF YOU USE $ORM//g" `grep -rIl $ORM projectName-* | grep -v '.svn'`
+GREP_TARGET=`grep -rIl $ORM projectName-* | grep -v '.svn'`
+
+sed -i -e "/REMOVE THIS LINE IF YOU USE $ORM/d" $GREP_TARGET
+sed -i -e "s/REMOVE THIS COMMENT IF YOU USE $ORM//g" $GREP_TARGET
 
 rm -rf `/usr/bin/find . -name '.svn' -type d`
 

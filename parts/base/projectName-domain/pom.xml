@@ -7,7 +7,7 @@
     <parent>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <artifactId>projectName</artifactId>
-        <version>1.9.1.RELEASE</version>
+        <version>1.10.0.RELEASE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -21,6 +21,11 @@
     </build>
 
     <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>projectName-env</artifactId>
+        </dependency>
+
         <!-- == Begin TERASOLUNA == -->
         <dependency>
             <groupId>org.terasoluna.gfw</groupId>
