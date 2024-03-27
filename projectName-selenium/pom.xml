@@ -5,7 +5,7 @@
     <artifactId>projectName-selenium</artifactId>
     <packaging>jar</packaging>
     <parent>
-        <version>1.8.2.RELEASE</version>
+        <version>1.8.3.RELEASE</version>
         <artifactId>projectName</artifactId>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <relativePath>../pom.xml</relativePath>
@@ -47,6 +47,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
             <scope>test</scope>
         </dependency>
 
