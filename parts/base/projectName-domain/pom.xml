@@ -7,9 +7,14 @@
     <parent>
         <groupId>xxxxxx.yyyyyy.zzzzzz</groupId>
         <artifactId>projectName</artifactId>
-        <version>1.10.0.RELEASE</version>
+        <version>1.11.0.RELEASE</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
+    <scm>
+        <connection>scm:git:git://github.com/Macchinetta/macchinetta-web-multi-blank.git</connection>
+        <developerConnection>scm:git:ssh://github.com/Macchinetta/macchinetta-web-multi-blank.git</developerConnection>
+        <url>https://github.com/Macchinetta/macchinetta-web-multi-blank</url>
+    </scm>
 
     <build>
         <plugins>
@@ -52,16 +57,16 @@
         <!-- == End TERASOLUNA == -->
 
         <!-- == Begin Database == -->
-<!--         <dependency> -->
-<!--             <groupId>org.postgresql</groupId> -->
-<!--             <artifactId>postgresql</artifactId> -->
-<!--             <scope>test</scope> -->
-<!--         </dependency> -->
-<!--         <dependency> -->
-<!--             <groupId>com.oracle.database.jdbc</groupId> -->
-<!--             <artifactId>ojdbc11</artifactId> -->
-<!--             <scope>test</scope> -->
-<!--         </dependency> -->
+        <!--         <dependency> -->
+        <!--             <groupId>org.postgresql</groupId> -->
+        <!--             <artifactId>postgresql</artifactId> -->
+        <!--             <scope>test</scope> -->
+        <!--         </dependency> -->
+        <!--         <dependency> -->
+        <!--             <groupId>com.oracle.database.jdbc</groupId> -->
+        <!--             <artifactId>ojdbc17</artifactId> -->
+        <!--             <scope>test</scope> -->
+        <!--         </dependency> -->
         <!-- == End Database == -->
 
         <!-- == Begin Unit Test == -->
